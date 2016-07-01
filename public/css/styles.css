@@ -1,0 +1,50 @@
+.top-bar, .bottom-bar {
+	background-color: #ccc;
+    color: #555;
+}
+
+.top-bar {
+	height: 48px;
+	border-bottom: solid 2px #bbb;
+    padding: 8px 8px 8px 8px;
+}
+
+.logo-caption {
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.bottom-bar {
+	height: 48px;
+	border-top: solid 2px #bbb;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.username-pulldown > span {
+    font-weight: bold;
+}
+
+.navicon > span {
+    font-size: 24px;
+}
+
+.dropdown-toggle {
+	cursor: pointer;
+}
+
+.top-bar-login > a {
+	text-decoration: none;
+	color: #555;				
+	letter-spacing: 2px;	
+}
+
+.top-bar-login > a:hover {
+	color: #888;
+}
+
+.auth-form {
+    margin-top: 50px;
+}

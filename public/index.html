@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LINKIATO</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="MainController">
+
+<!-- ============================================================ -->
+<!-- === TOP BAR ================================================ -->
+<!-- ============================================================ -->
+
+<div class="top-bar">
+	<div class="row">
+	    <div class="logo hidden-xs hidden-sm col-md-2">
+	        <span class="logo-caption">LINKIATO</span> 
+	    </div>
+
+	    <div ng-show="isAuthenticated()">
+		    <div class="col-xs-11 col-md-6">
+		        <div class="input-group">
+		            <span class="input-group-addon">@</span>
+		            <input type="text" class="form-control" placeholder="Enter search string">
+		        </div>
+		    </div>
+		    <div class="hidden-xs hidden-sm col-md-1">
+		        <button class="btn btn-primary">Add new</button>
+		    </div>
+		    <div class="hidden-xs hidden-sm col-md-3">
+		        <div class="username-pulldown pull-right">
+		            <div uib-dropdown dropdown-append-to-body>
+			            <span>{{authData.username}}</span>
+		            	<i uib-dropdown-toggle class="dropdown-toggle glyphicon glyphicon-chevron-down"></i>
+		            	<ul class="dropdown-menu" uib-dropdown-menu>
+		            		<li><a class="dropdown-item" href="#">Account settings</a></li>
+		            		<li><a class="dropdown-item" href="#">Log out</a></li>
+		            	</ul>
+	            	</div>
+		        </div>
+		    </div> 
+	    </div>
+
+	    <div ng-show="!isAuthenticated()">
+	    	<div class="col-xs-11 col-md-10"></div>
+	    </div>
+
+	    <div class="col-xs-1 hidden-md hidden-lg hidden-xl">
+	        <div class="navicon">
+	            <span>&#9776;</span>
+	        </div>
+	    </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- === CONTENT AREA =========================================== -->
+<!-- ============================================================ -->
+
+<div class="content-area">
+	<div ng-include src="'partials/' + (isAuthenticated() ? 'links' : 'login') + '.html'"></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- === BOTTOM BAR ============================================= -->
+<!-- ============================================================ -->
+
+<div class="bottom-bar hidden-md hidden-lg hidden-xl">
+		<span>bottom-bar</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- === SCRIPTS ================================================ -->
+<!-- ============================================================ -->
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/moment/moment.js"></script>
+<script src="lib/angular-moment/angular-moment.js"></script>
+<script src="lib/a0-angular-storage/dist/angular-storage.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+
+<script>
+angular.element(document).ready(function() {
+	angular.bootstrap(document, ['app']);
+});
+</script>
+
+</body>
+</html>

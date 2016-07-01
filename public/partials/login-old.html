@@ -1,0 +1,28 @@
+<div class="conditional" ng-show="!isAuthenticated()">
+	<div class="block">
+		<form ng-submit="authenticate()">
+			<span>Log in</span>	
+			<input type="text" ng-model="formData.username" placeholder="username"/><br />
+			<input type="text" ng-model="formData.password" placeholder="password"/><br />
+			<input type="submit" id="submit" value="Submit" />
+		</form>
+	</div>
+	<div class="block">
+		<form ng-submit="signup()">
+			<span>Sign up</span>
+			<input type="text" ng-model="formData.username" placeholder="username"/><br />
+			<input type="text" ng-model="formData.email" placeholder="email"/><br />
+			<input type="text" ng-model="formData.password" placeholder="password"/><br />	
+			<input type="submit" id="submit" value="Submit" />
+		</form>
+	</div>
+</div>
+<div class="conditional" ng-show="isAuthenticated()">
+	<div class="block">
+		<strong>{{username}}</strong><br />
+		<button ng-click="logout()"><span>Log out</span></button>
+	</div>
+</div>
+<div class="block">
+	<button ng-click="doSomething()"><span>Do something</span></button>
+</div>
